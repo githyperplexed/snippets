@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import { resolve } from "path";
 
 export default defineConfig({
   base: "./",
@@ -12,7 +11,8 @@ export default defineConfig({
         entryFileNames: "script.js",
         chunkFileNames: "script.js",
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith(".css")) {
+          const name = assetInfo.names && assetInfo.names[0];
+          if (name && name.endsWith(".css")) {
             return "style.css";
           }
           return "[name][extname]";
