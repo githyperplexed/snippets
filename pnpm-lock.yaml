@@ -20,6 +20,15 @@ importers:
       turbo:
         specifier: ^2.7.5
         version: 2.7.5
+      vite:
+        specifier: ^7.3.1
+        version: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(lightningcss@1.30.2)
+
+  packages/magic-mouse-trailer:
+    devDependencies:
+      vite:
+        specifier: ^7.3.1
+        version: 7.3.1(@types/node@25.0.10)(jiti@2.6.1)(lightningcss@1.30.2)
 
   packages/profile-thrower:
     dependencies:
