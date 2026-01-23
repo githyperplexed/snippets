@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@import "./fonts.css";
+
+@theme {
+  --breakpoint-xs: 475px;
+  --font-display: var(--font-outfit);
+  --font-mono: var(--font-space-mono);
+}
+
+body {
+  font-family: var(--font-display);
+}
