@@ -24,4 +24,16 @@ if (cards) {
       card.style.setProperty("--mouse-y", `${y}px`);
     };
   }
+
+  cards.ontouchmove = e => {
+    const touch = e.touches[0];
+    for(const card of document.getElementsByClassName("card")) {
+      const rect = card.getBoundingClientRect(),
+            x = touch.clientX - rect.left,
+            y = touch.clientY - rect.top;
+
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    };
+  }
 }
