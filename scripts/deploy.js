@@ -85,7 +85,7 @@ async function main() {
       const relativePath = path.relative(distPath, file);
       
 
-      const s3Key = `snippets/${pkgName}/${relativePath}`.replace(/\\/g, "/");
+      const s3Key = `snippet/${pkgName}/${relativePath}`.replace(/\\/g, "/");
 
       await uploadFile(file, s3Key);
     }
