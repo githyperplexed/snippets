@@ -1,0 +1,14 @@
+{
+  "name": "glowing-card-border",
+  "version": "1.0.0",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "type": "module"
+}
