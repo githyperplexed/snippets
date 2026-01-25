@@ -38,9 +38,7 @@ body {
   height: 1em;
   stroke: currentColor;
   stroke-width: 2px;
-  /* font-size sets the dimensions via em */
   font-size: 1rem;
-  /* animation-duration set by JS */
   animation-fill-mode: forwards;
   pointer-events: none;
 }
