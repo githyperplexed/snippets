@@ -5,6 +5,9 @@
 body {
   background: black;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   touch-action: none;
 }
@@ -13,6 +16,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.instruction {
+  color: oklch(100% 0 0 / 30%);
+  font-family: monospace;
 }
 
 .glow-point {
