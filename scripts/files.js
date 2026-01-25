@@ -16,7 +16,7 @@ const getDistPath = (pkgName) => {
 
 const toS3Key = (pkgName, distPath, filePath) => {
   const relativePath = path.relative(distPath, filePath);
-  return `snippet/${pkgName}/${relativePath}`.replace(/\\/g, "/");
+  return `snippet/${pkgName}/assets/${relativePath}`.replace(/\\/g, "/");
 };
 
 module.exports = { getFilesRecursively, getDistPath, toS3Key };

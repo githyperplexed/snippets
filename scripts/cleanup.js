@@ -1,6 +1,6 @@
 const { ListObjectsV2Command, DeleteObjectsCommand } = require("@aws-sdk/client-s3");
 
-const getPackagePrefix = (pkgName) => `snippet/${pkgName}/`;
+const getPackagePrefix = (pkgName) => `snippet/${pkgName}/assets/`;
 
 const listExistingKeys = async (client, bucketName, prefix) => {
   const keys = [];
