@@ -21,6 +21,7 @@ body {
 .instruction {
   color: oklch(100% 0 0 / 30%);
   font-family: monospace;
+  pointer-events: none;
 }
 
 .glow-point {
