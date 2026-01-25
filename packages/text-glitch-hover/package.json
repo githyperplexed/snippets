@@ -1,6 +1,6 @@
 {
   "name": "text-glitch-hover",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "vite": "^7.3.1"
   },
