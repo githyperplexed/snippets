@@ -34,6 +34,10 @@ main {
 	position: relative;
 	font-size: 1cqw;
 	gap: 1.5em;
+	padding: 1.5em;
+	border: 0.1em solid oklch(0.3 0 0);
+	border-radius: 1.5em;
+	overflow: hidden;
 }
 
 .card {	
@@ -41,12 +45,18 @@ main {
 	border: 1px solid oklch(0.3 0 0);
 	border-radius: 0.75em;
 	cursor: pointer;
+	
+	&:hover {
+		background-color: oklch(0.2 0 0);
+	}
 }
 
 .arm {
 	position: absolute;
-	height: 80vh;
-	left: 50%;
-	top: 0px;
-	translate: -50% -10vh;
+	height: 40em;
+	left: calc(1.5em + (var(--card-column) * 1.5em));
+	top: 0em;
+	translate: -50% -5em;
+	pointer-events: none;
+	transition: left 300ms ease-in-out;
 }
