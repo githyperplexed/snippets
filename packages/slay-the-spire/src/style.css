@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+}
+
+body {
+	min-height: 100vh;
+	font-family: system-ui, sans-serif;
+	background: #000;
+	color: #fff;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.container {
+	width: min(60vw, 1200px);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	container-type: inline-size;
+	font-size: 1cqw;
+	gap: 1.5em;
+}
+
+.card {	
+	aspect-ratio: 5 / 7;
+	border: 1px solid oklch(0.3 0 0);
+	border-radius: 0.75em;
+	cursor: pointer;
+}
+
+.arm {
+	position: absolute;
+	height: 80vh;
+	left: 50%;
+	top: 0px;
+	translate: -50% -10vh;
+}
