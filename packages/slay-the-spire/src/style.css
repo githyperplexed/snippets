@@ -31,6 +31,7 @@ main {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	container-type: inline-size;
+	position: relative;
 	font-size: 1cqw;
 	gap: 1.5em;
 }
