@@ -27,36 +27,51 @@ main {
 }
 
 .container {
-	width: min(60vw, 1200px);
+	width: 60vw;
+	position: relative;
+	overflow: hidden;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	container-type: inline-size;
-	position: relative;
-	font-size: 1cqw;
-	gap: 1.5em;
-	padding: 1.5em;
-	border: 0.1em solid oklch(0.3 0 0);
-	border-radius: 1.5em;
-	overflow: hidden;
+	gap: 1.8vw;
+	padding: 1.8vw;
+	border: 1px solid oklch(0.3 0 0);
+	border-radius: 1.8vw;
 }
 
-.card {	
+.card {
 	aspect-ratio: 5 / 7;
 	border: 1px solid oklch(0.3 0 0);
-	border-radius: 0.75em;
+	border-radius: 0.9vw;
 	cursor: pointer;
-	
-	&:hover {
-		background-color: oklch(0.2 0 0);
-	}
+}
+
+.card:hover {
+	background-color: oklch(0.2 0 0);
+}
+
+.container:has(.card:hover) .arm {
+	transition-delay: 0ms;
 }
 
 .arm {
 	position: absolute;
-	height: 40em;
-	left: calc(1.5em + (var(--card-column) * 1.5em));
-	top: 0em;
-	translate: -50% -5em;
+	height: 100%;
+	left: 50%;
+	top: 0%;
+	translate: -50% -100%;
 	pointer-events: none;
-	transition: left 300ms ease-in-out;
+	transition:
+		left 300ms ease-in-out,
+		top 300ms ease-in-out;
+	transition-delay: 300ms;
 }
+
+.container:has(.card[data-index="0"]:hover) .arm { left: 8.4vw; top: 10.8vw; }
+.container:has(.card[data-index="1"]:hover) .arm { left: 22.8vw; top: 10.8vw; }
+.container:has(.card[data-index="2"]:hover) .arm { left: 37.2vw; top: 10.8vw; }
+.container:has(.card[data-index="3"]:hover) .arm { left: 51.6vw; top: 10.8vw; }
+
+.container:has(.card[data-index="4"]:hover) .arm { left: 8.4vw; top: 30vw; }
+.container:has(.card[data-index="5"]:hover) .arm { left: 22.8vw; top: 30vw; }
+.container:has(.card[data-index="6"]:hover) .arm { left: 37.2vw; top: 30vw; }
+.container:has(.card[data-index="7"]:hover) .arm { left: 51.6vw; top: 30vw; }
