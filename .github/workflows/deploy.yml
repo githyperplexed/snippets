@@ -18,33 +18,27 @@ jobs:
         with:
           fetch-depth: 2 # Needed for HEAD^1 comparison
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 9
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "pnpm"
+          bun-version: latest
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install --frozen-lockfile
 
       - name: Detect Changed Packages
         id: filter
         run: |
           # Use Turbo to list what it WOULD build
           # We check against HEAD^1 (the previous commit)
-          CHANGED=$(npx turbo run build --filter="...[HEAD^1]" --dry=json | jq -r '.tasks | map(.package) | unique | join(",")')
-          
+          CHANGED=$(bunx turbo run build --filter="...[HEAD^1]" --dry=json | jq -r '.tasks | map(.package) | unique | join(",")')
+
           echo "Changed packages: $CHANGED"
           echo "packages=$CHANGED" >> $GITHUB_OUTPUT
 
       - name: Build Changed Packages Only
         if: steps.filter.outputs.packages != ''
-        run: pnpm turbo run build --filter="...[HEAD^1]"
+        run: bunx turbo run build --filter="...[HEAD^1]"
 
       - name: Deploy to R2
         if: steps.filter.outputs.packages != ''
@@ -53,5 +47,4 @@ jobs:
           CLOUDFLARE_R2_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_R2_ACCOUNT_ID }}
           CLOUDFLARE_R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
           CLOUDFLARE_R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
-        run: |
-          node scripts/deploy.js "${{ steps.filter.outputs.packages }}"
+        run: bun scripts/deploy.js "${{ steps.filter.outputs.packages }}"
