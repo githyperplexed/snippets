@@ -7,17 +7,20 @@
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<main>
-			<div class="container">
-				<div class="card" data-index="0"></div>
-				<div class="card" data-index="1"></div>
-				<div class="card" data-index="2"></div>
-				<div class="card" data-index="3"></div>
-				<div class="card" data-index="4"></div>
-				<div class="card" data-index="5"></div>
-				<div class="card" data-index="6"></div>
-				<div class="card" data-index="7"></div>
+		<main class="pattern-grid" style="--pattern-op: 0.04; --pattern-sz: 10rem 10rem;">
+			<div class="card-container pattern-dots" style="--pattern-op: 0.15; --pattern-sz: 3vw 3vw;">
+				<button class="card" data-index="0" style="--card-color: 210, 170, 120"><img src="./assets/icons/shell.svg" alt="shell" /></button>
+				<button class="card" data-index="1" style="--card-color: 80, 160, 80"><img src="./assets/icons/turtle.svg" alt="turtle" /></button>
+				<button class="card" data-index="2" style="--card-color: 220, 130, 50"><img src="./assets/icons/cat.svg" alt="cat" /></button>
+				<button class="card" data-index="3" style="--card-color: 200, 150, 60"><img src="./assets/icons/dog.svg" alt="dog" /></button>
+				<button class="card" data-index="4" style="--card-color: 50, 130, 210"><img src="./assets/icons/fish.svg" alt="fish" /></button>
+				<button class="card" data-index="5" style="--card-color: 220, 60, 60"><img src="./assets/icons/origami.svg" alt="origami" /></button>
+				<button class="card" data-index="6" style="--card-color: 160, 100, 210"><img src="./assets/icons/rabbit.svg" alt="rabbit" /></button>
+				<button class="card" data-index="7" style="--card-color: 80, 180, 210"><img src="./assets/icons/bird.svg" alt="bird" /></button>
 				<img src="./assets/arm.png" alt="Arm" class="arm" />
+			</div>
+			<div class="deck pattern-stripes" style="--pattern-op: 0.04; --pattern-sz: 6vw 6vw;">
+
 			</div>
 		</main>
 		<script type="module" src="./script.ts"></script>

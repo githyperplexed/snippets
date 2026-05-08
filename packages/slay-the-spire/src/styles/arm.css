@@ -1,0 +1,28 @@
+.card-container:has(.card:hover) .arm {
+	transition-delay: 0ms;
+}
+
+.arm {
+	position: absolute;
+	height: 100%;
+	left: 50%;
+	top: 0%;
+	translate: -50% -100%;
+	z-index: 3;
+	pointer-events: none;
+	transition:
+		left 300ms ease-in-out,
+		top 300ms ease-in-out;
+	transition-delay: 300ms;
+	user-select: none;
+}
+
+.card-container:has(.card[data-index="0"]:hover) .arm { left: 8.175vw;  top: 10.725vw; }
+.card-container:has(.card[data-index="1"]:hover) .arm { left: 22.725vw; top: 10.725vw; }
+.card-container:has(.card[data-index="2"]:hover) .arm { left: 37.275vw; top: 10.725vw; }
+.card-container:has(.card[data-index="3"]:hover) .arm { left: 51.825vw; top: 10.725vw; }
+
+.card-container:has(.card[data-index="4"]:hover) .arm { left: 8.175vw;  top: 30.375vw; }
+.card-container:has(.card[data-index="5"]:hover) .arm { left: 22.725vw; top: 30.375vw; }
+.card-container:has(.card[data-index="6"]:hover) .arm { left: 37.275vw; top: 30.375vw; }
+.card-container:has(.card[data-index="7"]:hover) .arm { left: 51.825vw; top: 30.375vw; }

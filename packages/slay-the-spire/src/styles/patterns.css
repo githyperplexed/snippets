@@ -1,0 +1,49 @@
+.pattern-stripes {
+	--pattern-fg: 255 255 255;
+	--pattern-op: 0.1;
+	--pattern-sz: 6px 6px;
+
+	background-image: linear-gradient(
+		-45deg,
+		rgb(var(--pattern-fg) / var(--pattern-op)) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgb(var(--pattern-fg) / var(--pattern-op)) 50%,
+		rgb(var(--pattern-fg) / var(--pattern-op)) 75%,
+		transparent 75%,
+		transparent 100%
+	);
+	background-size: var(--pattern-sz);
+}
+
+.pattern-grid {
+	--pattern-fg: 255 255 255;
+	--pattern-op: 0.04;
+	--pattern-sz: 5rem 5rem;
+
+	background-image: linear-gradient(
+			to right,
+			rgb(var(--pattern-fg) / var(--pattern-op)) 1px,
+			transparent 1px
+		),
+		linear-gradient(
+			to bottom,
+			rgb(var(--pattern-fg) / var(--pattern-op)) 1px,
+			transparent 1px
+		);
+	background-size: var(--pattern-sz);
+	background-position: center;
+}
+
+.pattern-dots {
+	--pattern-fg: 255 255 255;
+	--pattern-op: 0.15;
+	--pattern-sz: 2rem 2rem;
+
+	background-image: radial-gradient(
+		rgb(var(--pattern-fg) / var(--pattern-op)) 1px,
+		transparent 1px
+	);
+	background-size: var(--pattern-sz);
+	background-position: center;
+}
