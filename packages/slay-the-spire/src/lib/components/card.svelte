@@ -44,7 +44,7 @@
 
 	.card[data-selected="true"] {
 		transition:
-			translate 250ms cubic-bezier(0.36, 0, 0.66, -0.15),
+			translate 250ms cubic-bezier(0.36, 0, 0.66, -0.25),
 			scale 100ms ease-in-out;
 	}
 </style>
