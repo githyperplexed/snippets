@@ -1,15 +1,20 @@
 {
-  "name": "slay-the-spire",
-  "version": "1.0.0",
-  "devDependencies": {
-    "typescript": "^6.0.3",
-    "vite": "^8.0.10"
-  },
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "type": "module"
+	"name": "slay-the-spire",
+	"version": "1.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^7.1.1",
+		"@tailwindcss/vite": "^4.2.4",
+		"@tsconfig/svelte": "^5.0.8",
+		"svelte": "^5.55.5",
+		"tailwindcss": "^4.2.4",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.10"
+	}
 }
