@@ -28,7 +28,9 @@ jobs:
 
       - name: Detect Changed Packages
         id: filter
+        shell: bash
         run: |
+          set -euo pipefail
           # Use Turbo to list what it WOULD build
           # We check against HEAD^1 (the previous commit)
           CHANGED=$(bunx turbo run build --filter="...[HEAD^1]" --dry=json | jq -r '.tasks | map(.package) | unique | join(",")')
