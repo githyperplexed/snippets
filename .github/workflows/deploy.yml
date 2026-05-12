@@ -4,7 +4,12 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "packages/**" # Only trigger if packages change
+      - "packages/**"
+      - "package.json"
+      - "bun.lock"
+      - "turbo.json"
+      - "scripts/**"
+      - ".github/workflows/deploy.yml"
 
 permissions:
   contents: read
